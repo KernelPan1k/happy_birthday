@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        form {
+            width: 300px;
+        }
+        img {
+            height: 100px;
+            width: 100px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button {
+            float: right;
+            background: gold;
+            padding: 10px 20px;
+        }
+
+        .field {
+            width: 100%;
+            height: 30px;
+        }
+
+        label{
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<img src="images/birthday-100.png" alt="">
+
+<form id="birthday-form">
+    <p>
+        <label for="name">Name of the person</label>
+        <br>
+        <input type="text" id="name" placeholder="Name" class="field" required />
+    </p>
+    <p>
+        <label for="date">Birthday date</label>
+        <br>
+        <input type="date" id="date" class="field" required placeholder="dd.mm.yyyy" />
+    </p>
+    <p>
+        <label for="date">Language</label>
+        <br>
+        <select name="language" id="language" class="field">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </p>
+    <button type="submit">Save</button>
+</form>
+<script src="options.js"></script>
+</body>
+</html>
