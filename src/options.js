@@ -41,6 +41,7 @@ function restoreOptions() {
   function setCurrentChoice(result) {
     document.querySelector("#name").value = result.data.name || "";
     document.querySelector("#date").value = result.data.date || "";
+    document.querySelector("#language").value = result.data.language || "";
   }
 
   function onError(error) {
