@@ -15,8 +15,6 @@ let dataStorage = null;
 
 const getToday = () => {
   const today = new Date();
-  
-  const year = today.getFullYear().toString();
   let month = (today.getMonth() + 1).toString();
   let day = today.getDate().toString();
 
@@ -28,8 +26,22 @@ const getToday = () => {
     month = '0' + day;
   }
 
-  return  year + '-' + month + '-' + day;
+  return  month + '-' + day;
 };
+
+const getMonthAndDay = (d) => {
+  if (!d) {
+    return null;
+  }
+
+  const arrayDate = d.split('-');
+
+  try {
+    return arrayDate[1] + '-' + arrayDate[2];
+  } catch (e) {
+    return null;
+  }
+}
 
 const getRandom = () => Math.floor(Math.random() * 10);
 
@@ -123,8 +135,9 @@ const run = () => {
   }
 
   const today = getToday();
+  const birthDate = getMonthAndDay(dataStorage.date);
 
-  if (today !== dataStorage.date) {
+  if (!birthDate || today !== birthDate) {
     return;
   }
 
