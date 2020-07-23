@@ -15,7 +15,20 @@ let dataStorage = null;
 
 const getToday = () => {
   const today = new Date();
-  return today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  
+  const year = today.getFullYear().toString();
+  let month = (today.getMonth() + 1).toString();
+  let day = today.getDate().toString();
+
+  if (1 === month.length) {
+    month = '0' + month;
+  }
+
+  if (1 === day.length) {
+    month = '0' + day;
+  }
+
+  return  year + '-' + month + '-' + day;
 };
 
 const getRandom = () => Math.floor(Math.random() * 10);
